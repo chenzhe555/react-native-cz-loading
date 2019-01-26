@@ -1,0 +1,21 @@
+
+{
+  "name": "react-native-cz-loading",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "陈哲是个好孩子",
+  "license": "MIT",
+  "dependencies": {
+    "react-native-cz-pack-element": "0.0.3"
+  },
+  "devDependencies": {
+    "react-native-cz-pack-element": "0.0.3"
+  }
+}
