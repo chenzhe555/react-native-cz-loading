@@ -1,45 +1,41 @@
 
-# react-native-cz-loading
-
-## Getting started
-
-`$ npm install react-native-cz-loading --save`
-
-### Mostly automatic installation
-
-`$ react-native link react-native-cz-loading`
-
 ### Manual installation
 
-
-#### iOS
-
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-cz-loading` and add `RNCzLoading.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNCzLoading.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
-
-#### Android
-
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.chenzhe.loading.RNCzLoadingPackage;` to the imports at the top of the file
-  - Add `new RNCzLoadingPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-cz-loading'
-  	project(':react-native-cz-loading').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-cz-loading/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-cz-loading')
-  	```
+npm install react-native-cz-loading --save
 
 
-## Usage
-```javascript
-import RNCzLoading from 'react-native-cz-loading';
+### Usage
+import RNCZLoading from 'react-native-cz-loading';
 
-// TODO: What to do with the module?
-RNCzLoading;
-```
+render方法中：
+   <RNCZLoading evaluateView={ (loading) => {this.loading = loading}}></RNCZLoading>
+
+调用方法:
+/*
+* 显示Loading, 目前只支持显示菊花和文字
+* text: 显示文本信息
+* extraData: 额外信息{
+*    type: 显示类型,
+*    topSpace: 顶部预留空间,
+*    bottomSpace: 底部预留空间
+* }
+* return: 返回对象，目前只返回每次Loading对应到Key，用于hide调用关闭指定Loading信息
+* */
+this.loading.show(text = '测试信息'， extraData = {});
+
+
+/*
+* 关闭Loading
+* key: 关闭指定Key对应的Loading信息
+* */
+this.loading.hide(key = 'key');
+
+
+/*
+* 清空数据源，直接关闭Loading
+* */
+this.loading.hideImmediately();
+
+
+
   
