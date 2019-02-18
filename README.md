@@ -8,12 +8,19 @@ npm install react-native-cz-loading --save
 ## Usage
 ###  1.引入组件
 ```
-import RNCZLoading from 'react-native-cz-loading';
+import Loading from 'react-native-cz-loading';
 
-<RNCZLoading evaluateView={ (loading) => {this.loading = loading}}></RNCZLoading>
+<Loading evaluateView={ (loading) => {this.loading = loading}}></Loading>
 ```
 
 ###  2.方法说明:
+```
+/*
+* 赋值当前视图对象
+* */
+evaluateView
+```
+
 ```
 /*
 * 显示Loading, 目前只支持显示菊花和文字
