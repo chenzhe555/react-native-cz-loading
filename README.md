@@ -1,16 +1,20 @@
 
-### Manual installation
+## Manual installation
 
 npm install react-native-cz-loading --save
 
+	
 
-### Usage
+## Usage
+###  1.引入组件
+```
 import RNCZLoading from 'react-native-cz-loading';
-
 render方法中：
    <RNCZLoading evaluateView={ (loading) => {this.loading = loading}}></RNCZLoading>
+```
 
-调用方法:
+###  2.使用(方法说明):
+```
 /*
 * 显示Loading, 目前只支持显示菊花和文字
 * text: 显示文本信息
@@ -22,20 +26,23 @@ render方法中：
 * return: 返回对象，目前只返回每次Loading对应到Key，用于hide调用关闭指定Loading信息
 * */
 this.loading.show(text = '测试信息'， extraData = {});
+```
 
 
+```
 /*
 * 关闭Loading
 * key: 关闭指定Key对应的Loading信息
 * */
 this.loading.hide(key = 'key');
+```
 
-
+```
 /*
 * 清空数据源，直接关闭Loading
 * */
 this.loading.hideImmediately();
-
+```
 
 
   
