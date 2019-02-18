@@ -13,7 +13,8 @@ import Loading from 'react-native-cz-loading';
 <Loading evaluateView={ (loading) => {this.loading = loading}}></Loading>
 ```
 
-###  2.方法说明:
+###  2.属性:
+###  3.属性方法:
 ```
 /*
 * 赋值当前视图对象
@@ -21,6 +22,7 @@ import Loading from 'react-native-cz-loading';
 evaluateView
 ```
 
+###  4.供外部调用的方法:
 ```
 /*
 * 显示Loading, 目前只支持显示菊花和文字
