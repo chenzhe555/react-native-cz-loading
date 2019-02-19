@@ -54,7 +54,7 @@ export default class CZLoading extends Component {
         let key = 'loading-key-' + (++CZLoading.uniqueID);
         extraData['key'] = key;
         CZLoading.showArr.push(extraData);
-        //显示Toast
+        //显示Loading
         if (!CZLoading.isShowLoading) CZLoading.showLoading();
 
         //返回Loading可操作对象
@@ -70,8 +70,9 @@ export default class CZLoading extends Component {
         if (CZLoading.showArr.length == 0) return;
 
         //如果只有一个，直接移除
+        CZLoading.isShowLoading = false;
         if (CZLoading.showArr.length == 1) {
-            this.hideImmediately();
+            CZLoading.hideImmediately();
         } else {
             let index = -1;
             let item = null;
@@ -85,7 +86,7 @@ export default class CZLoading extends Component {
 
             if (index == -1 || index == 0) {
                 //未找到或者第一个，都删除第一个
-                CZLoading.currentLoadingView.destoryElement();
+                if (CZLoading.currentLoadingView) CZLoading.currentLoadingView.destoryElement();
                 CZLoading.showArr.splice(0,1);
                 CZLoading.showLoading();
             } else {
@@ -99,7 +100,7 @@ export default class CZLoading extends Component {
     * 清空数据源，直接关闭Loading
     * */
     static hideImmediately = () => {
-        CZLoading.currentLoadingView.destoryElement();
+        if (CZLoading.currentLoadingView) CZLoading.currentLoadingView.destoryElement();
         CZLoading.currentLoadingView = null;
         CZLoading.showArr = [];
     }

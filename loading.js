@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     ContentOneView: {
         width: 120,
         height: 120,
-        backgroundColor: 'rgba(0,0,0,0.6)',
+        backgroundColor: 'rgba(58,58,58,0.9)',
         borderRadius: 6,
         justifyContent: 'center'
     },
