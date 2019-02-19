@@ -24,7 +24,7 @@ import Loading from 'react-native-cz-loading';
 * }
 * img:图片对象Image，支持Gif，安卓需要引入com.facebook.fresco:animated-gif库
 * */
-Toast.show(text = '测试信息', extraData = {}, image = null);
+Loading.show(text = '测试信息', extraData = {}, image = null);
 ```
 
 ```
@@ -32,12 +32,12 @@ Toast.show(text = '测试信息', extraData = {}, image = null);
 * 关闭Loading
 * key: show方法会返回一个字典，里面有个key，可以hide指定的Loading，如果指定的Loading正在显示，则移除，不在的话只是简单移除数组
 * */
-Toast.hide(key = 'key');
+Loading.hide(key = 'key');
 ```
 
 ```
 /*
 * 清空数据源，直接关闭Loading
 * */
-Toast.hideImmediately();
+Loading.hideImmediately();
 ```
