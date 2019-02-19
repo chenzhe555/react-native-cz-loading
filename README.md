@@ -9,47 +9,35 @@ npm install react-native-cz-loading --save
 ###  1.引入组件
 ```
 import Loading from 'react-native-cz-loading';
-
-<Loading evaluateView={ (loading) => {this.loading = loading}}></Loading>
 ```
-
-###  2.方法说明:
-```
-/*
-* 赋值当前视图对象
-* */
-evaluateView
-```
-
+###  2.属性:
+###  3.属性方法:
+###  4.供外部调用的方法:
 ```
 /*
-* 显示Loading, 目前只支持显示菊花和文字
+* 显示Loading, 目前只支持显示菊花&文字,以及自定义图片取代菊花
 * text: 显示文本信息
 * extraData: 额外信息{
 *    type: 显示类型,
 *    topSpace: 顶部预留空间,
 *    bottomSpace: 底部预留空间
 * }
-* return: 返回对象，目前只返回每次Loading对应到Key，用于hide调用关闭指定Loading信息
+* img:图片对象Image，支持Gif，安卓需要引入com.facebook.fresco:animated-gif库
 * */
-this.loading.show(text = '测试信息'， extraData = {});
+Toast.show(text = '测试信息', extraData = {}, image = null);
 ```
-
 
 ```
 /*
 * 关闭Loading
-* key: 关闭指定Key对应的Loading信息
+* key: show方法会返回一个字典，里面有个key，可以hide指定的Loading，如果指定的Loading正在显示，则移除，不在的话只是简单移除数组
 * */
-this.loading.hide(key = 'key');
+Toast.hide(key = 'key');
 ```
 
 ```
 /*
 * 清空数据源，直接关闭Loading
 * */
-this.loading.hideImmediately();
+Toast.hideImmediately();
 ```
-
-
-  
